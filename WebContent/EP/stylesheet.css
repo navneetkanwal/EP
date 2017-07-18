@@ -1,0 +1,212 @@
+@CHARSET "ISO-8859-1";
+
+#myLogo {
+	color: #1F45FC;
+	font-family: sans-serif;
+	font-size: 32px;
+	font-style: oblique;
+	display: inline-block;
+}
+.topLogo {
+margin-top: -65px;
+}
+.topMarginClass {
+	margin-top: -15px;
+}
+
+#myCalc {
+	font-size: x-large;
+	border: solid;
+	background: none;
+	margin-top: -30px;
+	
+}
+
+
+label {
+	text-decoration: none !important;
+	padding: 0px;
+	margin-left: 12px
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	display: inline-table;
+}
+
+td, th {
+	border: 1px solid black;
+	text-align: left;
+	padding: 3px;
+	height:2px;
+}
+
+
+.firstTable .thirdTable {
+	table-layout: fixed;
+}
+.firstTable td:nth-child(1) {
+	background-color: #C0C0C0;
+}
+
+.firstTable tr:nth-child(1) {
+	background-color: #C0C0C0;
+}
+
+.firstTable tr:nth-child(2) {
+	background-color: #C0C0C0;
+}
+
+/* .firstTable td:nth-child(6) {
+	background-color: #F0FFFF;
+}
+
+.firstTable td:nth-child(7) {
+	background-color: #F0FFFF;
+}
+
+.firstTable td:nth-child(8) {
+	background-color: #FDEEF4;
+}
+
+.firstTable td:nth-child(9) {
+	background-color: #FDEEF4;
+}
+
+.firstTable td:nth-child(10) {
+	background-color: #E5E4E2;
+}
+
+.firstTable td:nth-child(11) {
+	background-color: #E5E4E2;
+}
+
+.firstTable td:nth-child(12) {
+	background-color: #C6DEFF;
+}
+
+.firstTable td:nth-child(13) {
+	background-color: #C6DEFF;
+}
+ */
+
+
+.secondTable tr:nth-child(1) {
+	background-color: #C0C0C0;
+}
+/* .secondTable tr:nth-child(2) {
+	background-color: #F0FFFF;
+}
+
+.secondTable tr:nth-child(3) {
+	background-color: #F0FFFF;
+}
+
+.secondTable tr:nth-child(4) {
+	background-color: #FDEEF4;
+}
+
+.secondTable tr:nth-child(5) {
+	background-color: #FDEEF4;
+}
+
+.secondTable tr:nth-child(6) {
+	background-color: #E5E4E2;
+}
+
+.secondTable tr:nth-child(7) {
+	background-color: #E5E4E2;
+}
+
+.secondTable tr:nth-child(8) {
+	background-color: #C6DEFF;
+}
+
+.secondTable tr:nth-child(9) {
+	background-color: #C6DEFF;
+} */
+
+
+.thirdTable tr:nth-child(1) {
+	background-color: #C0C0C0;
+}
+
+/* .thirdTable td:nth-child(2) {
+	background-color: #F0FFFF;
+}
+
+.thirdTable td:nth-child(3) {
+	background-color: #F0FFFF;
+}
+
+.thirdTable td:nth-child(4) {
+	background-color: #FDEEF4;
+}
+
+.thirdTable td:nth-child(5) {
+	background-color: #FDEEF4;
+}
+
+.thirdTable td:nth-child(6) {
+	background-color: #E5E4E2;
+}
+
+.thirdTable td:nth-child(7) {
+	background-color: #E5E4E2;
+}
+
+.thirdTable td:nth-child(8) {
+	background-color: #C6DEFF;
+}
+
+.thirdTable td:nth-child(9) {
+	background-color: #C6DEFF;
+}
+ */
+
+
+.myclass {
+	margin-left: 300px;
+}
+
+.myclassN {
+	margin-left: 470px;
+}
+
+.fillDataClass {
+	margin-top: 15px;
+	margin-left: 20px;
+}
+
+select, option {
+	width: 100px;
+}
+
+.pageClass {
+	border: solid;
+	padding: 10px;
+}
+
+.inputClass {
+	width: 85px;
+	background: none;
+}
+.inputClassDis {
+	width: 40px;
+	background: none;
+}
+select {
+	background-color: none ;
+}
+
+.codeClass {
+	background-color: none;
+}
+
+.dollarClass {
+	margin-right: -10px;
+}
+.columShort{
+	font-size: small;
+}
