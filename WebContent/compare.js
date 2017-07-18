@@ -1,4 +1,4 @@
-//var url_safe_distributor;
+var url_safe_distributor;
 var url_safe_tarifftype;
 var url_safe_usage;
 
