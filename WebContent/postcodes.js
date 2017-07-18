@@ -1,12 +1,19 @@
 function postcodeCallCall() {
-	var postcodes = [ {
-		"postcode" : 2040,
+	var postcodes =  [ {
+		"postcode" : 3040,
 		"suburb" : "clayton",
-		"distributor" : "citipower"
+		"state" : "vic",
+		"distributor" : "Citipower"
 	}, {
-		"postcode" : 2020,
+		"postcode" : 3020,
 		"suburb" : "caulfield",
-		"distributor" : "powercor"
+		"state" : "vic",
+		"distributor" : "Powercor"
+	}, {
+		"postcode" : 3020,
+		"suburb" : "caulfield1",
+		"state" : "vic",
+		"distributor" : "United"
 	} ];
 	return postcodes;
 }

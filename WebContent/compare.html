@@ -38,9 +38,18 @@
 <link rel='stylesheet' id='redux-google-fonts-css'
 	href='http://fonts.googleapis.com/css?family=Roboto%3A300%2C500%2C400%2C100&038;ver=1428634381'
 	type='text/css' media='all' />
+<script type="text/javascript"></script>
+<script type="text/javascript" src="compare.js"></script>
+<script type="text/javascript" src="rates.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="nmis.js"></script>
+<script type="text/javascript" src="postcodes.js"></script>
+
 </head>
 <script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+	
+</script>
 <body>
 	<!--Wrapper-->
 	<div id="wrapper">
@@ -251,21 +260,18 @@
 															</div>
 														</td>
 													</tr>
-													
-														
+
+
 													<tr class="hidden-xs list-feature">
 														<td><span class="inner-td ">Rate</span></td>
 														<td ng-repeat="key in jsonbody.Rates"><span
-															class="inner-td ">Peak :{{key.Peak1}}</span>
-															<span
-															class="inner-td ">Peak Balance :{{key.Peak2}}</span>
-															
-															<span
+															class="inner-td ">Peak :{{key.Peak1}}</span> <span
+															class="inner-td ">Peak Balance :{{key.Peak2}}</span> <span
 															class="inner-td ">Supply Charge :{{key.Supply}}</span></td>
 													</tr>
-													 <tr class="hidden-xs">
+													<tr class="hidden-xs">
 														<td colspan="100" class="title-feature"></td>
-													</tr> 
+													</tr>
 													<tr class="hidden-xs list-feature">
 														<td><span class="inner-td ">Exit Fee</span></td>
 														<td ng-repeat="key in jsonbody.Rates"><span
@@ -279,7 +285,7 @@
 																class="fa fa-check"></i></span></td>
 													</tr>
 
-												
+
 													<tr class="pricing-footer hidden-xs">
 														<td></td>
 														<td ng-repeat="key in jsonbody.Rates">

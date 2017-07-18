@@ -1,59 +1,5 @@
-var postcodes = [ {
-	"postcode" : 3040,
-	"suburb" : "clayton",
-	"state" : "vic",
-	"distributor" : "Citipower"
-}, {
-	"postcode" : 3020,
-	"suburb" : "caulfield",
-	"state" : "vic",
-	"distributor" : "Powercor"
-}, {
-	"postcode" : 3020,
-	"suburb" : "caulfield1",
-	"state" : "vic",
-	"distributor" : "United"
-} ];
-
-var nmis = [ {
-	"nmiprefix" : 60,
-	"state" : "vic",
-	"distributor" : "Citipower"
-}, {
-	"nmiprefix" : 61,
-	"state" : "vic",
-	"distributor" : "Powercor"
-}, {
-	"nmiprefix" : 62,
-	"state" : "vic",
-	"distributor" : "United"
-} ];
-
-var data = [ {
-	"state" : "vic",
-	"busres" : "Business",
-	"metertype" : "Peak only",
-	"tarifftype" : "E"
-}, {
-	"state" : "vic",
-	"busres" : "Residential",
-	"metertype" : "Peak only",
-	"tarifftype" : "D"
-}, {
-	"state" : "nsw",
-	"busres" : "Business",
-	"metertype" : "Peak only",
-	"tarifftype" : "GEN"
-} ];
-
-function addTab(that) {
-	$(that).attr('id');
-	$(that).attr('name');
-}
 
 function questions() {
-	// var postcodes = dataCall();
-	// var raczxtes = ratesCall();
 
 	if (document.getElementById("billyes").checked) {
 
@@ -74,6 +20,7 @@ function questions() {
 
 function compare(element) {
 
+	var data = dataMethod();
 	if (document.getElementById("businessid").checked) {
 		var busresvalue = "Business";
 
@@ -104,6 +51,7 @@ function compare(element) {
 
 function bynmiLookup() {
 
+	var nmis = nmiCall();
 	for (var i = 0; i < Object.keys(nmis).length; i++) {
 		if (nmis[i].nmiprefix == document.getElementById("nmiinput").value) {
 			document.getElementById("distributor").innerHTML = nmis[i].distributor;
@@ -114,6 +62,7 @@ function bynmiLookup() {
 
 function bypostcodeLookup() {
 
+	var postcodes = postcodeCallCall();
 	for (var i = 0; i < Object.keys(postcodes).length; i++) {
 		if (postcodes[i].postcode == document.getElementById("postcodeValue").value
 				&& postcodes[i].suburb == document.getElementById("suburbList").value) {
@@ -124,6 +73,7 @@ function bypostcodeLookup() {
 }
 function suburbChoice(value) {
 
+	var postcodes = postcodeCallCall();
 	document.getElementById("suburb").style.display = 'none';
 	document.getElementById("propertyType").style.display = 'none';
 	document.getElementById("meterType").style.display = 'none';
