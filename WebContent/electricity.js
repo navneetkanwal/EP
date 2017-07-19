@@ -59,7 +59,7 @@ function compare(element) {
 	var link = "compare.html?distributor="
 			+ document.getElementById("distributor").innerHTML + "&tarifftype="
 			+ document.getElementById("tarifftype").innerHTML + "&usage="
-			+ usage + "&days="
+			+ "" +usage + "&days="
 			+ document.getElementById("daysusage").value;
 	document.getElementById("comparlink").setAttribute('href', link);
 

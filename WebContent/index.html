@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport"
@@ -44,9 +46,22 @@
 <script type="text/javascript" src="nmis.js"></script>
 <script type="text/javascript" src="postcodes.js"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+
+<script type="text/javascript">
+$(window).load(function() {
+	// Animate loader off screen
+	$(".se-pre-con").fadeOut("slow");;
+});
+</script>
 </head>
 
 <body>
+<div class="se-pre-con"></div>
+
 	<!--Wrapper-->
 	<div id="wrapper">
 		<!-- Start header -->
@@ -770,7 +785,6 @@
 					</div>
 				</div>
 				<!-- End copyright -->
-
 				<!-- Start popup -->
 				<div class="clr toggle-bar-fade hidden-xs" id="toggle-bar-wrap">
 					<div class="clr container" id="toggle-bar">
@@ -863,5 +877,6 @@
 			<script type='text/javascript' src='js/chosen.jquery.min.js'></script>
 			<script type='text/javascript' src='js/custom.js'></script>
 			<script type='text/javascript' src='js/accordion.min.js'></script>
+	
 </body>
 </html>
