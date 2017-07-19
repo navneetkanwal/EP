@@ -405,7 +405,7 @@ body{font-family:Roboto;font-weight:300;font-style:normal;}nav{font-family:Robot
 /*pricing-table.html*/
 .ts-pricing-table-banner{background-image:url(../images/background/bl3.jpg)}
 .ts-pricing-table-banner h2{color:#fff;}
-.ts-pricing-table-new{padding-top: 100px !important;}
+.ts-pricing-table-new{padding-top: 10px !important;}
 .ts-pricing-table-style4{padding-top: 100px !important;padding-bottom: 100px !important;}
 .ts-pricing-table-style3-wrap{padding-top: 100px !important;padding-bottom: 100px !important;background-color: #f3f3f3 !important;}
 

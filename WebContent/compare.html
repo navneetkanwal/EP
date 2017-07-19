@@ -225,9 +225,9 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12  ">
-							<div class="ts-wrapper">
-								<div class="ts-section-title text-center">
-									<h3>Pricing table new</h3>
+							<div class="ts-wrapper" ng-app="myApp">
+								<div class="ts-section-title text-center" ng-controller="myCtrl">
+									<h3>{{plans}} Available Plans</h3>
 									<p>Each type of hosting service we provide is further
 										optimized with unique performance tweaks!</p>
 								</div>
@@ -239,7 +239,7 @@
 												<table>
 													<tr class="section-info">
 														<td class="ts-pricing-img"><figure>
-																<img alt="" src="images/homepage/girl14-216x460.png">
+																<img alt="" src="">
 															</figure></td>
 														<td ng-repeat="key in jsonbody.Rates">
 															<div class="ts-pricing-item">
@@ -247,12 +247,12 @@
 																<h3 class="price-title">{{key.Company}}</h3>
 																<div class="price-unit-vat">
 																	<div class="price-unit">
-																		<span class="price">$4.</span> <span class="unit">99
+																		<span class="price">.</span> <span class="unit">99
 																			/ <span class="per-month">9m</span>
 																		</span>
 																	</div>
 																	<p>
-																		ex GST<br /> SAVINGS
+																		<h4>SAVINGS</h4> (ex GST) 
 																	</p>
 																</div>
 																<div class="desc">{{key.Description}}</div>
@@ -263,7 +263,7 @@
 
 
 													<tr class="hidden-xs list-feature">
-														<td><span class="inner-td ">Rate</span></td>
+														<td><span class="inner-td "><h3>Rate</h3></span></td>
 														<td ng-repeat="key in jsonbody.Rates"><span
 															class="inner-td ">Peak :{{key.Peak1}}</span> <span
 															class="inner-td ">Peak Balance :{{key.Peak2}}</span> <span
@@ -273,13 +273,13 @@
 														<td colspan="100" class="title-feature"></td>
 													</tr>
 													<tr class="hidden-xs list-feature">
-														<td><span class="inner-td ">Exit Fee</span></td>
+														<td><span class="inner-td "><h5>Exit Fee</h5></span></td>
 														<td ng-repeat="key in jsonbody.Rates"><span
 															class="inner-td ts-icon-close"><i
 																class="fa fa-close"></i></span></td>
 													</tr>
 													<tr class="hidden-xs list-feature">
-														<td><span class="inner-td ">Discount</span></td>
+														<td><span class="inner-td "><h5>Discount</h5></span></td>
 														<td ng-repeat="key in jsonbody.Rates"><span
 															class="inner-td ts-icon-check"><i
 																class="fa fa-check"></i></span></td>

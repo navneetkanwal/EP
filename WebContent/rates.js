@@ -33,6 +33,20 @@ var ratelist = {
 			{
 				"Company" : "SUMO",
 				"Distributor" : "Citipower",
+				"TariffType" : "E",
+				"Peak1" : 0.2313,
+				"Peak2" : 0.14355,
+				"Shoulder" : 0.183455,
+				"OffPeak" : 0.184355,
+				"CL" : 0.185435,
+				"Supply" : 0.143855,
+				"Description" : "ALINTA DESCRIPTION "
+
+			},
+			
+			{
+				"Company" : "SUMO",
+				"Distributor" : "Citipower",
 				"TariffType" : "D",
 				"Peak1" : 0.2113,
 				"Peak2" : 0.18455,

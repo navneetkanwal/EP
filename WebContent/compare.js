@@ -26,12 +26,16 @@ app.controller('myCtrl',
 						window.location.search.substring(1)).split("&")[2]
 						.split("=")[1];
 			}
+			var plans=0;
 			var res = jQuery.grep(ratelist.Rates, function(v) {
 				if (v.Distributor == url_safe_distributor && v.TariffType ==url_safe_tarifftype)
+					{
+					plans++;
 					return v;
+					}
 			});
 			res["Rates"] = res;
 			$scope.jsonbody = res;
-
+			$scope.plans = plans;
 		});
 

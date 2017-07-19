@@ -139,7 +139,7 @@ h6{
 h1,h2,h3,h4,h5,h6{
 	font-weight: 300;
 	color: #252525;
-	margin: 0 0 20px 0;
+	margin: 0 0 0px 0;
 	}
 .breadcrumbs {
   display: inline-block;
@@ -5872,7 +5872,7 @@ iframe{border: none;}
 	vertical-align: bottom;
 }
 
-.ts-pricingtable-5 table td{width: 20%; border: none; padding: 0;}
+.ts-pricingtable-5 table td{width: 0%; border: none; padding: 0;}
 .ts-pricingtable-5 .ts-pricing-item{
 	background: #f8f8f8;
 	-webkit-border-radius: 3px;
