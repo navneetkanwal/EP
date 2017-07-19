@@ -1,7 +1,7 @@
 var url_safe_distributor;
 var url_safe_tarifftype;
 var url_safe_usage;
-var ratelist;
+//var ratelist;
 
 window.onload = function() {
 	// createcomparison();
