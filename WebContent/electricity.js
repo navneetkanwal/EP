@@ -69,7 +69,7 @@ function bynmiLookup() {
 
 	var nmis = nmiCall();
 	for (var i = 0; i < Object.keys(nmis).length; i++) {
-		if (nmis[i].nmiprefix == document.getElementById("nmiinput").value) {
+		if (nmis[i].nmiprefix == document.getElementById("nmiinput").value.substring(0,2)) {
 			document.getElementById("distributor").innerHTML = nmis[i].distributor;
 			document.getElementById("state").innerHTML = nmis[i].state;
 		}
