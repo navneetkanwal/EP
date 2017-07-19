@@ -19,7 +19,7 @@ function questions() {
 }
 
 function compare(element) {
-
+//test
 	var data = dataMethod();
 	if (document.getElementById("businessid").checked) {
 		var busresvalue = "Business";
