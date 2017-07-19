@@ -1,4 +1,3 @@
-
 function questions() {
 
 	if (document.getElementById("billyes").checked) {
@@ -9,6 +8,7 @@ function questions() {
 		document.getElementById("propertyType").style.display = 'block';
 		document.getElementById("meterType").style.display = 'block';
 		document.getElementById("usageActual").style.display = 'block';
+		document.getElementById("usageDays").style.display = 'block';
 
 	} else if (document.getElementById("billno").checked) {
 		document.getElementById("nmi").style.display = 'none';
@@ -40,11 +40,27 @@ function compare(element) {
 			document.getElementById("tarifftype").innerHTML = data[i].tarifftype;
 		}
 	}
+	var usage;
+	if (document.getElementById("billyes").checked) {
+		usage = document.getElementById("actualusage").value;
+	} else {
+
+		if (document.getElementById("oneusage").checked) {
+			usage = 100;
+		}
+		else if (document.getElementById("twousage").checked) {
+			usage = 200;
+		}
+		else if (document.getElementById("threeusage").checked) {
+			usage = 300;
+		}
+	}
 
 	var link = "compare.html?distributor="
 			+ document.getElementById("distributor").innerHTML + "&tarifftype="
 			+ document.getElementById("tarifftype").innerHTML + "&usage="
-			+ document.getElementById("actualusage").value;
+			+ usage + "&days="
+			+ document.getElementById("daysusage").value;
 	document.getElementById("comparlink").setAttribute('href', link);
 
 }
@@ -87,6 +103,7 @@ function suburbChoice(value) {
 			document.getElementById("propertyType").style.display = 'block';
 			document.getElementById("meterType").style.display = 'block';
 			document.getElementById("usageLevel").style.display = 'block';
+			document.getElementById("usageDays").style.display = 'block';
 
 			var option = document.createElement("option");
 			option.value = postcodes[i].suburb;
