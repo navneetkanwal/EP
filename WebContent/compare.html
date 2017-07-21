@@ -44,12 +44,18 @@
 <script type="text/javascript" src="data.js"></script>
 <script type="text/javascript" src="nmis.js"></script>
 <script type="text/javascript" src="postcodes.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
 
-</head>
+
+</script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
 	
 </script>
+
+</head>
+
 <body>
 	<!--Wrapper-->
 	<div id="wrapper">
@@ -227,7 +233,7 @@
 						<div class="col-sm-12  ">
 							<div class="ts-wrapper" ng-app="myApp">
 								<div class="ts-section-title text-center" ng-controller="myCtrl">
-									<h3>{{plans}} Available Plans</h3>
+									<h3 id="plansid">{{plans}} Available Plans</h3>
 									<p>Each type of hosting service we provide is further
 										optimized with unique performance tweaks!</p>
 								</div>
@@ -242,7 +248,8 @@
 																<img alt="" src="">
 															</figure></td>
 														<td ng-repeat="key in jsonbody.Rates" >
-															<div class="ts-pricing-item" ng-class='{reccomended:$first}'>
+															<div class="ts-pricing-item alltable"  ng-class='{reccomended:$first}'>
+																<div ng-class='{rec:$first}' class="rectest"></div>
 																<span class="price-icon"><i class="fa fa-navicon"></i></span>
 																<h3 class="price-title">{{key.Company}}</h3>
 																<div class="price-unit-vat">
@@ -263,8 +270,8 @@
 
 
 													<tr class="hidden-xs list-feature">
-														<td><span class="inner-td "><h3>Rate</h3></span></td>
-														<td ng-repeat="key in jsonbody.Rates" ><div ng-class='{reccomended:$first}'><span 
+														<td ><span class="inner-td "><h3>{{rate}}</h3></span></td>
+														<td ng-repeat="key in jsonbody.Rates" ><div class="alltable" ng-class='{reccomended:$first}'><span 
 															class="inner-td ">Peak :{{key.Peak1}}</span> <span
 															class="inner-td ">Peak Balance :{{key.Peak2}}</span> <span
 															class="inner-td ">Supply Charge :{{key.Supply}}</span></div></td>
@@ -273,14 +280,14 @@
 														<td colspan="100" class="title-feature"></td>
 													</tr>
 													<tr class="hidden-xs list-feature">
-														<td><span class="inner-td "><h5>Exit Fee</h5></span></td>
-														<td ng-repeat="key in jsonbody.Rates"><div ng-class='{reccomended:$first}'><span
+														<td><span class="inner-td "><h5>{{exitfee}}</h5></span></td>
+														<td ng-repeat="key in jsonbody.Rates"><div  class="alltable" ng-class='{reccomended:$first}'><span
 															class="inner-td ts-icon-close"><i
 																class="fa fa-close"></i></span></div></td>
 													</tr>
 													<tr class="hidden-xs list-feature">
-														<td><span class="inner-td "><h5>Discount</h5></span></td>
-														<td ng-repeat="key in jsonbody.Rates"><div ng-class='{reccomended:$first}'><span
+														<td><span class="inner-td "><h5>{{discount}}</h5></span></td>
+														<td ng-repeat="key in jsonbody.Rates"><div class="alltable" ng-class='{reccomended:$first}'><span
 															class="inner-td ts-icon-check"><i
 																class="fa fa-check"></i></span></div></td>
 													</tr>
@@ -311,6 +318,7 @@
 					</div>
 				</div>
 			</div>
+
 
 			<!-- Start Bottom contact -->
 			<div class="ts-section-top-footer">
@@ -524,10 +532,8 @@
 			<!-- End popup -->
 		</div>
 		<!-- End / Page wrap -->
-		<script language="javascript" type="text/javascript">
-			function foo() {
-				alert("aaa");
-			}
+		<script  type="text/javascript">
+		
 		</script>
 		<script type="text/javascript" src="compare.js"></script>
 		<script type='text/javascript' src='js/jquery.js'></script>
