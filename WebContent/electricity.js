@@ -1,21 +1,55 @@
-function questions() {
+$(function() {
+$('#meterTypeList').on('change',function(){
+  // get the selected value
+  var selection = $(this).val();
+  // get all input fields that has a valueref attribute containing the selected value, and show them
+  $('input[data-valueref~="' + selection + '"]').show();
+  // hide all other input fields
+  //$('input').not(showinputs).hide();
+});
+});
+function toggleQuestions() {
 
 	if (document.getElementById("billyes").checked) {
 
 		document.getElementById("nmi").style.display = 'block';
+		document.getElementById("nmiinput").value = '';
 		document.getElementById("postcode").style.display = 'none';
-		document.getElementById("suburb").style.display = 'none';
-		document.getElementById("propertyType").style.display = 'block';
-		document.getElementById("meterType").style.display = 'block';
-		document.getElementById("usageActual").style.display = 'block';
-		document.getElementById("usageDays").style.display = 'block';
+		//document.getElementById("suburb").style.display = 'none';
+		document.getElementById("propertyType").style.display = 'none';
+		document.getElementById("meterType").style.display = 'none';
+		//document.getElementById("usageActual").style.display = 'none';
+		//document.getElementById("usageDays").style.display = 'none';
 
 	} else if (document.getElementById("billno").checked) {
 		document.getElementById("nmi").style.display = 'none';
 		document.getElementById("postcode").style.display = 'block';
-
+		document.getElementById("propertyType").style.display = 'none';
+		document.getElementById("meterType").style.display = 'none';
 	}
 
+}
+
+function displayPropertyType()
+{
+	if(document.getElementById("nmiinput").value.length == 11)
+	{
+		document.getElementById("businessid").checked = false;
+		document.getElementById("residentid").checked = false;
+		document.getElementById("propertyType").style.display = 'block';
+		document.getElementById("meterType").style.display = 'none';
+	}
+	else
+	{
+		document.getElementById("propertyType").style.display = 'none';
+		document.getElementById("meterType").style.display = 'none';
+	}
+}
+
+function displayUsage()
+{
+	document.getElementById("meterType").style.display = 'block';
+	//document.getElementById("peakOnly").style.display = 'block';
 }
 
 function compare(element) {
