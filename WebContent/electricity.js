@@ -1,59 +1,119 @@
+function displayDays()
+{
+	var selection = document.getElementById("meterTypeList").value;
+	if(selection == "peak" && document.getElementById("peakusage").value != '')
+	{
+		document.getElementById("usageDays").style.display = 'block';
+	}
+	else if(selection == "peakOff" && document.getElementById("peakusage").value != '' && document.getElementById("offpeakusage").value != '')
+	{
+		document.getElementById("usageDays").style.display = 'block';
+	}
+	else if(selection == "peakOffShoulder" && document.getElementById("peakusage").value != '' && document.getElementById("offpeakusage").value != ''
+		 && document.getElementById("shoulderusage").value != '')
+	{
+		document.getElementById("usageDays").style.display = 'block';
+	}
+	else if(selection == "peakControl" && document.getElementById("peakusage").value != '' && document.getElementById("controlledLoadusage").value != '')
+	{
+		document.getElementById("usageDays").style.display = 'block';
+	}
+	else
+	{
+		document.getElementById("usageDays").style.display = 'none';
+	}
+}
+
 $(function() {
 $('#meterTypeList').on('change',function(){
-  // get the selected value
   var selection = $(this).val();
-  // get all input fields that has a valueref attribute containing the selected value, and show them
+  $('input[data-valueref~="hide"]').hide();
   $('input[data-valueref~="' + selection + '"]').show();
-  // hide all other input fields
-  //$('input').not(showinputs).hide();
+  resetFields(selection);
+  displayDays();
 });
 });
-function toggleQuestions() {
 
+function resetFields(selection)
+{
+	if(selection == "peak")
+	 {
+		  document.getElementById("offpeakusage").value = '';
+		  document.getElementById("shoulderusage").value = '';
+		  document.getElementById("controlledLoadusage").value = '';
+	 }
+	  else if(selection == "peakOff")
+	 {
+		  document.getElementById("offpeakusage").value = '';
+		  document.getElementById("shoulderusage").value = '';
+		  document.getElementById("controlledLoadusage").value = '';
+	 }else if(selection == "peakOffShoulder")
+	 {
+		 document.getElementById("shoulderusage").value = ''; 
+		 document.getElementById("controlledLoadusage").value = '';
+	}
+	 else
+	{
+		 document.getElementById("offpeakusage").value = '';
+		 document.getElementById("shoulderusage").value = '';
+	}
+	document.getElementById("usageDays").style.display = 'none';
+}
+function toggleQuestions() {
+	document.getElementById("postcode").style.display = 'none';
+	document.getElementById("suburb").style.display = 'none';
+	document.getElementById("propertyType").style.display = 'none';
+	document.getElementById("meterTypeList").value = 'peak';
+	document.getElementById("meterType").style.display = 'none';
+	document.getElementById("peakusage").style.display = 'none';
+	document.getElementById("offpeakusage").style.display = 'none';
+	document.getElementById("shoulderusage").style.display = 'none';
+	document.getElementById("controlledLoadusage").style.display = 'none';
+	//document.getElementById("usageActual").style.display = 'none';
+	document.getElementById("usageDays").style.display = 'none';
+	document.getElementById("offpeakusage").value = '';
+	  document.getElementById("shoulderusage").value = '';
+	  document.getElementById("controlledLoadusage").value = '';
+	  document.getElementById("peakusage").value = '';
+	  document.getElementById("daysusage").value = '';
+	  document.getElementById("postcodeValue").value = '';
 	if (document.getElementById("billyes").checked) {
 
 		document.getElementById("nmi").style.display = 'block';
 		document.getElementById("nmiinput").value = '';
-		document.getElementById("postcode").style.display = 'none';
-		//document.getElementById("suburb").style.display = 'none';
-		document.getElementById("propertyType").style.display = 'none';
-		document.getElementById("meterType").style.display = 'none';
-		//document.getElementById("usageActual").style.display = 'none';
-		//document.getElementById("usageDays").style.display = 'none';
-
+		
 	} else if (document.getElementById("billno").checked) {
 		document.getElementById("nmi").style.display = 'none';
 		document.getElementById("postcode").style.display = 'block';
-		document.getElementById("propertyType").style.display = 'none';
-		document.getElementById("meterType").style.display = 'none';
+		
 	}
 
 }
 
 function displayPropertyType()
 {
+	document.getElementById("meterType").style.display = 'none';
+	document.getElementById("peakusage").style.display = 'none';
 	if(document.getElementById("nmiinput").value.length == 11)
 	{
 		document.getElementById("businessid").checked = false;
 		document.getElementById("residentid").checked = false;
-		document.getElementById("propertyType").style.display = 'block';
-		document.getElementById("meterType").style.display = 'none';
+		document.getElementById("propertyType").style.display = 'block';		
 	}
 	else
 	{
 		document.getElementById("propertyType").style.display = 'none';
-		document.getElementById("meterType").style.display = 'none';
 	}
 }
 
 function displayUsage()
 {
 	document.getElementById("meterType").style.display = 'block';
-	//document.getElementById("peakOnly").style.display = 'block';
+	document.getElementById("peakusage").style.display = 'block';
 }
 
 function compare(element) {
-//test
+
 	var data = dataMethod();
 	if (document.getElementById("businessid").checked) {
 		var busresvalue = "Business";
@@ -135,10 +195,7 @@ function suburbChoice(value) {
 		if (postcodes[i].postcode == document.getElementById("postcodeValue").value) {
 
 			document.getElementById("propertyType").style.display = 'block';
-			document.getElementById("meterType").style.display = 'block';
-			document.getElementById("usageLevel").style.display = 'block';
-			document.getElementById("usageDays").style.display = 'block';
-
+			
 			var option = document.createElement("option");
 			option.value = postcodes[i].suburb;
 			option.text = postcodes[i].suburb;
