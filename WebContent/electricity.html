@@ -268,7 +268,7 @@
 						<div id="fb-root"></div>
 						<div class="container">
 							<div class="navbar navbar-default" role="navigation">
-
+							
 								<div class="jumbotron">
 									<h2>Compare</h2>
 									<p>Start your comparison with simple questions.</p>
@@ -289,7 +289,7 @@
 										<p id="postcode" hidden>
 											<Label class="form-control ">Enter your Post Code?</Label> <input
 												required="required" id="postcodeValue"
-												class="form-control input-lg" name="domain" type="text"
+												class="form-control input-lg" name="domain" type="text" maxlength="4"
 												placeholder=" eg. 3XXX" oninput="suburbChoice(this.value)" />
 											<br />
 										</p>
@@ -324,39 +324,16 @@
 											</select>
 										</p>
 										
-										<input type="text" class="form-control input-lg" data-valueref="peak peakOff peakOffShoulder peakControl" id="peakusage" placeholder="Please enter your Peak Electricity usage?" 
-										style="margin-bottom:5px;"/>
-										<input type="text" class="form-control input-lg" data-valueref="peakOff peakOffShoulder" id="offpeakusage" placeholder="Please enter your Off Peak usage?" 
-										style="display:none;margin-bottom:5px;"/>
-										<input type="text" class="form-control input-lg" data-valueref="peakOffShoulder" id="shoulderusage" placeholder="Please enter your Shoulder usage?" 
-										style="display:none;margin-bottom:5px;"/>
-										<input type="text" class="form-control input-lg" data-valueref="peakControl" id="controlledLoadusage" placeholder="Please enter your Controlled Load usage?" 
-										style="display:none;margin-bottom:5px;"/>
+										<input type="text" class="form-control input-lg" id="peakusage" placeholder="Please enter your Peak Electricity usage?" 
+										style="display:none;margin-bottom:5px;" oninput="displayDays()"/>
+										<input type="text" class="form-control input-lg" data-valueref="hide peakOff peakOffShoulder" id="offpeakusage" placeholder="Please enter your Off Peak usage?" 
+										style="display:none;margin-bottom:5px;" oninput="displayDays()"/>
+										<input type="text" class="form-control input-lg" data-valueref="hide peakOffShoulder" id="shoulderusage" placeholder="Please enter your Shoulder usage?" 
+										style="display:none;margin-bottom:5px;" oninput="displayDays()"/>
+										<input type="text" class="form-control input-lg" data-valueref="hide peakControl" id="controlledLoadusage" placeholder="Please enter your Controlled Load usage?" 
+										style="display:none;margin-bottom:5px;" oninput="displayDays()"/>
 										</br>
 
-										<!-- <p id="peakOnly" hidden>
-											<Label class="form-control ">Please enter your
-												typical Peak Electricity usage?</Label><input type="text"
-												class="form-control input-lg" id="peakusage" value=""> </br>
-										</p>
-										
-										<p id="offPeak" hidden>
-											<Label class="form-control ">Please enter your
-												Peak off Electricity usage?</Label><input type="text"
-												class="form-control input-lg" id="offpeakusage" value=""> </br>
-										</p>
-										
-										<p id="shoulder" hidden>
-											<Label class="form-control ">Please enter your
-												Shoulder electricity usage?</Label><input type="text"
-												class="form-control input-lg" id="shoulderusage" value=""> </br>
-										</p>
-										
-										<p id="controlledLoad" hidden>
-											<Label class="form-control ">Please enter your
-												Shoulder electricity usage?</Label><input type="text"
-												class="form-control input-lg" id="controlledLoadusage" value=""> </br>
-										</p>-->
 										<p id="usageLevel" hidden>
 											<Label class="form-control ">What level best
 												describes your typical electricity usage?</Label><input type="radio"
@@ -371,7 +348,7 @@
 										<p id="usageDays" hidden>
 											<Label class="form-control ">Please enter No of days
 												for bill?</Label><input type="text" class="form-control input-lg"
-												id="daysusage" value="" onClick=""> </br>
+												id="daysusage" value=""> </br>
 										</p>
 
 										<Label id="state" hidden></Label> <Label id="distributor"
@@ -386,6 +363,7 @@
 
 											</div>
 										</div>
+										
 									</form>
 								</div>
 
