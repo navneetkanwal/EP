@@ -33,11 +33,10 @@ a:focus {
 
 .reccomended {
 	border-style: solid !important;
-	box-shadow: 10px 10px 5px #888888 !important;
 	margin-right: 15px !important;
-	margin-bottom: 25px !important;
-	margin-top: 25px !important;
-	padding-right: 15px !important;
+	margin-bottom: 0px !important;
+	margin-top: 0px !important;
+	padding-bottom: 10px !important;
 }
 .alltable{
 	
@@ -45,9 +44,16 @@ a:focus {
 	box-shadow: 10px 10px 5px #888888;
 	margin-right: 15px;
 }
-#peak1 {
-    color: orange;
+.labeltag{
+	margin-left: 15px !important;
+	margin-bottom: 0px !important;
+	margin-top: 10px !important;
+	
 }
+#peak1 {
+    
+}
+
 .rec {
  border-style : solid;
 	box-shadow: 10px 10px 5px grey;
@@ -57,11 +63,10 @@ a:focus {
 	color: white;
 	border-color:grey;
 	background-color: blue;
-	border-style: solid; 
-	box-shadow : 10px 10px 5px grey; 
-	margin-right :
-	10px; width : 110px; height : 30px; 
-	margin-top: -15px; margin-left : -30px;
+	margin-right :10px; 
+	width : 110px; height : 30px; 
+	margin-top: 0px;
+	 margin-left : -30px;
 	/* Rotate div */
 	-ms-transform: rotate(-35de); /* IE 9 */
 	-webkit-transform: rotate(-35deg); /* Chrome, Safari, Opera */
@@ -7796,10 +7801,13 @@ iframe {
 	width: 0%;
 	border: none;
 	padding: 0;
+	    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .ts-pricingtable-5 .ts-pricing-item {
 	background: #f8f8f8;
+	
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
@@ -7831,12 +7839,13 @@ iframe {
 	font-family: 'Roboto';
 	font-size: 20px;
 	font-weight: 400;
-	margin: 17px 0 20px;
+	margin: 0px 0 15px;
 }
 
 .ts-pricingtable-5 .price-unit-vat {
 	background: #ebebeb;
-	padding: 20px 15px 15px 15px;
+	padding: 10px 5px 5px 10px;
+	    margin-right: 0PX;
 }
 
 .ts-pricingtable-5 .price-unit-vat p {
@@ -7866,7 +7875,7 @@ iframe {
 }
 
 .ts-pricingtable-5 .desc {
-	padding: 20px;
+	padding: 5px;
 	font-size: 13px;
 	font-weight: 400;
 	letter-spacing: 0;
@@ -7916,7 +7925,7 @@ iframe {
 	margin: 0 30px 0 30px;
 	text-align: center;
 	display: block;
-	line-height: 45px;
+	line-height: 30px;
 	border-top: 0px solid #e6e6e6;
 	font-size: 13px;
 	color: #252525;
