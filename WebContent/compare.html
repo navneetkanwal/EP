@@ -263,7 +263,7 @@
 																</p>
 																<p>
 																	<select class=" input-lg" ng-model="f.Company" >
-																	<option value="All" selected>All</option>
+																	<option value>All</option>
 																		<option ng-repeat="key in jsonbody.Rates ">{{key.Company}}</option>
 																	</select>
 																</p>
@@ -274,14 +274,25 @@
 																</p>
 																<p>
 																	<select class=" input-lg" ng-model="f.Exitfee">
-																		<option value="All" selected>All</option>
+																		<option value>All</option>
 																		<option ng-repeat="key in jsonbody.Rates | unique : 'Exitfee'"
 																			value="{{key.Exitfee}}">{{key.Exitfee}}</option>
-
-
-
 																	</select>
 																</p>
+																
+																<p>
+																	<Label class=" ">by Exit Fee</Label>
+																</p>
+																<p>
+																	<select class=" input-lg" ng-model="f.Exitfee">
+																		<option value>All</option>
+																		<option ng-repeat="key in jsonbody.Rates | unique : 'Exitfee'"
+																			value="{{key.Exitfee}}">{{key.Exitfee}}</option>
+																	</select>
+																</p>
+																
+																  <button id="clear-filter" ng-click="clearFilter()" type="button">Clear Filter</button>
+            
 															</div>
 														</td>
 

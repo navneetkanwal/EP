@@ -10,6 +10,8 @@ window.onload = function() {
 
 var app = angular.module('myApp', []);
 
+
+
 app.filter('unique', function() {
 	   // we will return a function which will take in a collection
 	   // and a keyname
@@ -81,5 +83,8 @@ app.controller('myCtrl',
 			
 			}
 		
-
+			   $scope.clearFilter = function() {
+				     
+				      $scope.f = {};
+				    };
 		});
