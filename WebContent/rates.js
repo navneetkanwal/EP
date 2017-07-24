@@ -6,13 +6,17 @@ var ratelist = {
 				"Company" : "BLUENRG",
 				"Distributor" : "Citipower",
 				"TariffType" : "E",
-				"Peak1" : 0.2113,
+				"Peak1" : 0.9113,
 				"Peak2" : 0.1855,
 				"Shoulder" : 0.1855,
 				"OffPeak" : 0.186755,
-				"CL" : 0.184555,
+				"CL" : 0,
 				"Supply" : 0.1855,
-				"Description" : "Blue NRG "
+				"busres" : "business",
+				"discount" : 35,
+				"Description" : "Blue NRG ",
+				"Exitfee" :"no",
+				"Bills" : "monthly"
 
 			},
 			
@@ -20,13 +24,17 @@ var ratelist = {
 				"Company" : "ALINTA",
 				"Distributor" : "Citipower",
 				"TariffType" : "E",
-				"Peak1" : 0.2313,
+				"Peak1" : 0.4313,
 				"Peak2" : 0.14355,
-				"Shoulder" : 0.183455,
-				"OffPeak" : 0.184355,
+				"Shoulder" : 0,
+				"OffPeak" : 0,
 				"CL" : 0.185435,
 				"Supply" : 0.143855,
-				"Description" : "ALINTA DESCRIPTION "
+				"busres" : "business",
+				"discount" : 35,
+				"Description" : "ALINTA DESCRIPTION ",
+				"Exitfee" :"no"	,
+				"Bills" : "quarterly"
 
 			},
 			
@@ -40,7 +48,11 @@ var ratelist = {
 				"OffPeak" : 0.184355,
 				"CL" : 0.185435,
 				"Supply" : 0.143855,
-				"Description" : "ALINTA DESCRIPTION "
+				"busres" : "business",
+				"discount" : 0,
+				"Description" : "ALINTA DESCRIPTION ",
+				"Exitfee" :"yes"	,
+				"Bills" : "monthly"
 
 			},
 			
@@ -54,7 +66,11 @@ var ratelist = {
 				"OffPeak" : 0.154855,
 				"CL" : 0.145855,
 				"Supply" : 0.145855,
-				"Description" : "SUMO DESCRIPTION "
+				"busres" : "business",
+				"discount" : 43,
+				"Description" : "SUMO DESCRIPTION ",
+				"Exitfee" :"yes"	,
+				"Bills" : "monthly"
 
 			},
 	]
