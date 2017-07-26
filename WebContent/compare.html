@@ -240,8 +240,7 @@
 							<div class="ts-wrapper" ng-app="myApp">
 								<div class="ts-section-title text-center" ng-controller="myCtrl">
 									<h3 id="plansid">{{plans}} Available Plans</h3>
-									<p>Each type of hosting service we provide is further
-										optimized with unique performance tweaks!</p>
+									
 								</div>
 								<div class="row">
 									<div class="col-sm-12  ">
@@ -302,11 +301,18 @@
 														</td>
 
 														<td ng-repeat="key in jsonbody.Rates | filter : f">
-															<div class="ts-pricing-item alltable main-menu-2.fixed"
-																ng-class='{reccomended:$first}'>
+														
+															<div class="ts-pricing-item  sticky topicon">
+																<!-- ng-class='{reccomended:$first}'> -->
 																<div ng-class='{rec:$first}' class="rectest "></div>
-															<!-- 	<span class="price-icon "><i
-																	class="fa fa-navicon"></i></span> -->
+															<div><span class="price-icon "><img src="images/bluenrg.png"
+																	class="fa fa-navicon"></img></span></div>
+																	<div><a href="#" class="ts-bt-pricing"
+																	>Know More</a></div>														
+																
+															</div>
+															<div class="ts-pricing-item alltable">
+																<!-- ng-class='{reccomended:$first}'> -->
 																<h3 class="price-title ">{{key.Company}}</h3>
 																<div class="price-unit-vat">
 																	<div class="price-unit">
@@ -320,12 +326,11 @@
 																	</p>
 																</div>
 																<div class="desc">{{key.Description}}</div>
-																<a href="#showrates" class="ts-bt-pricing"
-																	id="showrates">Know More</a>
+																
 															</div>
 															
 															<div
-																class="alltable ratesection" ng-class='{reccomended:$first}'>
+																class="alltable ratesection" id="showrates">
 																<h4 class="ts-pricingtable labeltag">{{rate}}</h4>
 																<span class="inner-td " id="peak1">Peak
 																	:{{key.Peak1}}</span> <span class="inner-td "
@@ -343,14 +348,14 @@
 															</div>
 															
 															<div
-																class="alltable" ng-class='{reccomended:$first}'>
+																class="alltable" >
 																<h4 class="ts-pricingtable labeltag">{{exitfee}}</h4>
 																<span class="inner-td ts-icon-close"><i
 																	class="fa fa-close"></i></span>
 															</div>
 															
 															<div
-																class="alltable" ng-class='{reccomended:$first}'>
+																class="alltable" >
 																<h4 class="ts-pricingtable labeltag">{{discount}}</h4>
 																<span class="inner-td ts-icon-check"><i
 																	class="fa fa-check"></i></span>

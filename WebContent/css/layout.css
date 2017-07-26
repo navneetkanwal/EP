@@ -799,14 +799,17 @@ li.mini-shoping-cart-wraper:hover a span{
 	border-color: blue;
 }
 .ts-pricingtable-5 .price-icon{
-	background: blue;
+	
 }
 .ts-pricingtable-5 .price-unit{
 	color: blue;
+	
 }
 .ts-pricingtable-5 .ts-bt-pricing{
 	background: blue; 
 	border-color: blue;
+	margin-bottom: 30px !important;
+	    
 }
 .ts-pricingtable-5 .ts-bt-pricing:hover{
 	color: blue;

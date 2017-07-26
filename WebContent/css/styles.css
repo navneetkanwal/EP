@@ -39,7 +39,7 @@ a:focus {
 	padding-bottom: 10px !important;
 }
 .alltable{
-	
+	    margin-bottom: 5px;
 	border-style: solid;
 	box-shadow: 10px 10px 5px #888888;
 	margin-right: 15px;
@@ -53,7 +53,19 @@ a:focus {
 #peak1 {
     
 }
-
+.fixed {
+    position: fixed;
+    top:120px; 
+    
+    opacity: 0.5;
+   
+    }
+   /*  z-index: 9999; } */
+.topicon{
+	
+	margin-bottom: -35px;
+    margin-top: -50px;
+}    
 .rec {
  border-style : solid;
 	box-shadow: 10px 10px 5px grey;
@@ -72,6 +84,7 @@ a:focus {
 	-webkit-transform: rotate(-35deg); /* Chrome, Safari, Opera */
 	transform: rotate(-35deg);
 	margin-left: -35px;
+	margin-bottom: -25px;
 }
 
 .rec:before {
@@ -7807,7 +7820,7 @@ iframe {
 
 .ts-pricingtable-5 .ts-pricing-item {
 	background: #f8f8f8;
-	
+	margin-top: -35px !important;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
@@ -7822,7 +7835,7 @@ iframe {
 .ts-pricingtable-5 .price-icon {
 	width: 78px;
 	height: 78px;
-	background: blue;
+	
 	font-size: 27px;
 	color: #ffffff;
 	line-height: 78px;

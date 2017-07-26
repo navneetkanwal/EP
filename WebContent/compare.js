@@ -3,6 +3,23 @@ var url_safe_tarifftype;
 var url_safe_usage;
 // var ratelist;
 
+//var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+
+$(window).scroll(function(){
+	if(window.innerWidth >= 600){
+	  var sticky = $('.sticky'),
+	      scroll = $(window).scrollTop();
+
+	  if (scroll >= 100){ sticky.addClass('fixed');
+		// var elem = document.getElementByClassName('chart');
+	  //  elem.style.width = 70 + "%";
+	  }
+	  else sticky.removeClass('fixed');}
+	
+	var plans = document.getElementById("plansid").innerHTML.split(' ')[0];
+
+	});
 window.onload = function() {
 
 };
