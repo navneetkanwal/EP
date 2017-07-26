@@ -1,26 +1,33 @@
 function displayDays()
 {
-	var selection = document.getElementById("meterTypeList").value;
-	if(selection == "peak" && document.getElementById("peakusage").value != '')
+	if(document.getElementById("meterType").style.display == 'block')
 	{
-		document.getElementById("usageDays").style.display = 'block';
-	}
-	else if(selection == "peakOff" && document.getElementById("peakusage").value != '' && document.getElementById("offpeakusage").value != '')
-	{
-		document.getElementById("usageDays").style.display = 'block';
-	}
-	else if(selection == "peakOffShoulder" && document.getElementById("peakusage").value != '' && document.getElementById("offpeakusage").value != ''
-		 && document.getElementById("shoulderusage").value != '')
-	{
-		document.getElementById("usageDays").style.display = 'block';
-	}
-	else if(selection == "peakControl" && document.getElementById("peakusage").value != '' && document.getElementById("controlledLoadusage").value != '')
-	{
-		document.getElementById("usageDays").style.display = 'block';
+		var selection = document.getElementById("meterTypeList").value;
+		if(selection == "peak" && document.getElementById("peakusage").value != '')
+		{
+			document.getElementById("usageDays").style.display = 'block';
+		}
+		else if(selection == "peakOff" && document.getElementById("peakusage").value != '' && document.getElementById("offpeakusage").value != '')
+		{
+			document.getElementById("usageDays").style.display = 'block';
+		}
+		else if(selection == "peakOffShoulder" && document.getElementById("peakusage").value != '' && document.getElementById("offpeakusage").value != ''
+			 && document.getElementById("shoulderusage").value != '')
+		{
+			document.getElementById("usageDays").style.display = 'block';
+		}
+		else if(selection == "peakControl" && document.getElementById("peakusage").value != '' && document.getElementById("controlledLoadusage").value != '')
+		{
+			document.getElementById("usageDays").style.display = 'block';
+		}
+		else
+		{
+			document.getElementById("usageDays").style.display = 'none';
+		}
 	}
 	else
 	{
-		document.getElementById("usageDays").style.display = 'none';
+		document.getElementById("usageDays").style.display = 'block';
 	}
 }
 
@@ -29,12 +36,12 @@ $('#meterTypeList').on('change',function(){
   var selection = $(this).val();
   $('input[data-valueref~="hide"]').hide();
   $('input[data-valueref~="' + selection + '"]').show();
-  resetFields(selection);
+  resetElectricityFields(selection);
   displayDays();
 });
 });
 
-function resetFields(selection)
+function resetElectricityFields(selection)
 {
 	if(selection == "peak")
 	 {
@@ -59,24 +66,36 @@ function resetFields(selection)
 	}
 	document.getElementById("usageDays").style.display = 'none';
 }
-function toggleQuestions() {
-	document.getElementById("postcode").style.display = 'none';
-	document.getElementById("suburb").style.display = 'none';
-	document.getElementById("propertyType").style.display = 'none';
+
+function resetFields()
+{
 	document.getElementById("meterTypeList").value = 'peak';
 	document.getElementById("meterType").style.display = 'none';
 	document.getElementById("peakusage").style.display = 'none';
+	document.getElementById("businessid").checked = false;
+	document.getElementById("residentid").checked = false;
 	document.getElementById("offpeakusage").style.display = 'none';
 	document.getElementById("shoulderusage").style.display = 'none';
 	document.getElementById("controlledLoadusage").style.display = 'none';
-	//document.getElementById("usageActual").style.display = 'none';
+	document.getElementById("usageLevel").style.display = 'none';
+	document.getElementById("oneusage").checked = false;
+	document.getElementById("twousage").checked = false;
+	document.getElementById("threeusage").checked = false;
 	document.getElementById("usageDays").style.display = 'none';
 	document.getElementById("offpeakusage").value = '';
-	  document.getElementById("shoulderusage").value = '';
-	  document.getElementById("controlledLoadusage").value = '';
-	  document.getElementById("peakusage").value = '';
-	  document.getElementById("daysusage").value = '';
-	  document.getElementById("postcodeValue").value = '';
+    document.getElementById("shoulderusage").value = '';
+    document.getElementById("controlledLoadusage").value = '';
+    document.getElementById("peakusage").value = '';
+    document.getElementById("daysusage").value = '';
+}
+
+function toggleQuestions()
+{
+	resetFields();
+	document.getElementById("postcode").style.display = 'none';
+	document.getElementById("suburb").style.display = 'none';
+	document.getElementById("propertyType").style.display = 'none';
+	document.getElementById("postcodeValue").value = '';
 	if (document.getElementById("billyes").checked) {
 
 		document.getElementById("nmi").style.display = 'block';
@@ -92,12 +111,10 @@ function toggleQuestions() {
 
 function displayPropertyType()
 {
-	document.getElementById("meterType").style.display = 'none';
-	document.getElementById("peakusage").style.display = 'none';
+	resetFields();
 	if(document.getElementById("nmiinput").value.length == 11)
 	{
-		document.getElementById("businessid").checked = false;
-		document.getElementById("residentid").checked = false;
+		
 		document.getElementById("propertyType").style.display = 'block';		
 	}
 	else
@@ -108,12 +125,32 @@ function displayPropertyType()
 
 function displayUsage()
 {
-	document.getElementById("meterType").style.display = 'block';
-	document.getElementById("peakusage").style.display = 'block';
+	if (document.getElementById("billyes").checked) {
+
+		document.getElementById("meterType").style.display = 'block';
+		document.getElementById("peakusage").style.display = 'block';
+		
+	} else if (document.getElementById("billno").checked) {
+		document.getElementById("usageLevel").style.display = 'block';
+		
+	}
+	
+}
+
+function displayCompareBtn()
+{
+	if(document.getElementById("daysusage").value != '')
+	{
+		
+		document.getElementById("compareBtn").style.display = 'block';		
+	}
+	else
+	{
+		document.getElementById("compareBtn").style.display = 'none';
+	}
 }
 
 function compare(element) {
-
 	var data = dataMethod();
 	if (document.getElementById("businessid").checked) {
 		var busresvalue = "Business";
@@ -150,12 +187,17 @@ function compare(element) {
 		}
 	}
 
-	var link = "compare.html?distributor="
+	/*var link = "compare.html?distributor="
 			+ document.getElementById("distributor").innerHTML + "&tarifftype="
 			+ document.getElementById("tarifftype").innerHTML + "&usage="
 			+ "" +usage + "&days="
 			+ document.getElementById("daysusage").value;
-	document.getElementById("comparlink").setAttribute('href', link);
+	document.getElementById("comparlink").setAttribute('href', link);*/
+	return "compare.html?distributor="
+			+ document.getElementById("distributor").innerHTML + "&tarifftype="
+			+ document.getElementById("tarifftype").innerHTML + "&usage="
+			+ "" +usage + "&days="
+			+ document.getElementById("daysusage").value;
 
 }
 
@@ -182,7 +224,8 @@ function bypostcodeLookup() {
 	}
 }
 function suburbChoice(value) {
-
+	
+	resetFields();
 	var postcodes = postcodeCallCall();
 	document.getElementById("suburb").style.display = 'none';
 	document.getElementById("propertyType").style.display = 'none';
